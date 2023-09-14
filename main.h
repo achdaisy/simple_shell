@@ -11,15 +11,18 @@
 #include <fcntl.h>
 
 /*#define ARGS 8*/
-#define BUFFSIZE 1024
+#define BUFFSIZE 10000 /*making it large to avoid reallocs*/
 
 extern char **environ;
 
+void _environ(void);
+char *return_path(void);
+char *path_separator(char *path, char *arg);
 void console_display(void);
 /*void echo(const char *msg);*/
 /*void execute_console_display(const char *myConsole)*/
 void accept_input_command(char *cmd, size_t size_input);
-void exec(char **arg, char **penviron);
+void exec(char *filepath, char **arg, char **penviron);
 void free_arr(char **strings);
 char **parser(char *buff);
 char *npath (void);

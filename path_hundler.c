@@ -31,10 +31,16 @@ char *path_separator(char *path, char *arg)
 			/*free(copy_path);*/
 			return (file_path);
 		}
+		/*else
+		{
+			printf("Command not found");
+			buffer = (incrementor + '0');
+			input_err(argv[0], buffer, cmd_args[0]);
+		}*/
 		path_token = strtok(NULL, delim);
 	}
-	free(copy_path);
-	free(file_path);
+	/*free(copy_path);*/
+	/*free(file_path);*/
 	return (NULL);
 }
 
