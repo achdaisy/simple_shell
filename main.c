@@ -11,7 +11,7 @@
 
 int main(__attribute__((unused)) int argc, char **argv, char **penviron)
 {
-	char *input = NULL, *arg1, **cmd_args = NULL, /*buffer*/ *path_var, *filepath;
+	char *input = NULL, *arg1, **cmd_args = NULL, buffer, *path_var, *filepath;
 	size_t n = 0;
 	int incrementor = 0;
 	ssize_t chars_read = 0;
@@ -23,9 +23,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **penviron)
 		if (isatty(STDIN_FILENO))/*interactive mode*/
 			printf("shell$ ");
 		chars_read = getline(&input, &n, stdin);
-
 		ctrl_d(chars_read, input);
-
 		cmd_args = parser(input);
 		if (cmd_args[0] == NULL)
 		{
@@ -40,10 +38,15 @@ int main(__attribute__((unused)) int argc, char **argv, char **penviron)
 			path_var = return_path();
 			arg1 = cmd_args[0];
 			filepath = path_separator(path_var, arg1);
-			exec(filepath, cmd_args, penviron);
+			if (access(filepath, X_OK) == 0)
+				exec(filepath, cmd_args, penviron);
+			else
+			{
+				buffer = (incrementor + '0');
+				input_err(argv[0], buffer, cmd_args[0]);
+			}
 			free(filepath);
 		}
-
 	}
 	free(input);
 	free_arr(cmd_args);
