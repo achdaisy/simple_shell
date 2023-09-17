@@ -12,13 +12,13 @@ void free_arr(char **strings)
 	int i;
 	/*char **strings = str_pointer;*/
 
-        if (strings != NULL)
-        {
-                for (i = 0; strings[i]; i++)
-                {
-                        free(strings[i]);
-                }
-                free(strings);
+	if (strings != NULL)
+	{
+		for (i = 0; strings[i]; i++)
+		{
+			free(strings[i]);
+		}
+		free(strings);
 		/**str_pointer = NULL;*/
-        }
+	}
 }
