@@ -2,8 +2,11 @@
 
 /**
  * main - main function
+ * @argc: number of arguments
+ * @argv: the executable
+ * @penviron: the environment
  *
- * Return: 0 
+ * Return: 0
  */
 
 int main(__attribute__((unused)) int argc, char **argv, char **penviron)
@@ -14,7 +17,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **penviron)
 	ssize_t chars_read = 0;
 	(void) argv;
 
-	while(1)
+	while (1)
 	{
 		incrementor++;
 		if (isatty(STDIN_FILENO))/*interactive mode*/
@@ -26,7 +29,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **penviron)
 		cmd_args = parser(input);
 		if (cmd_args[0] == NULL)
 		{
-		 	free_arr(cmd_args);
+			free_arr(cmd_args);
 			continue;
 		}
 		built_in(cmd_args, input);

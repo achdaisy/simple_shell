@@ -25,7 +25,7 @@ void accept_input_command(char *cmd, size_t size_input);
 void exec(char *filepath, char **arg, char **penviron);
 void free_arr(char **strings);
 char **parser(char *buff);
-char *npath (void);
+char *npath(void);
 int print_a_char(char a);
 int print_a_str(char *string);
 void input_err(char *executable, int incrementor, char *input);

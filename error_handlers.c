@@ -2,7 +2,7 @@
 
 /**
  * input_err - handles the error for command not found
- * @excecutable: the name of the executable (hsh)
+ * @executable: the name of the executable (hsh)
  * @incrementor: number of times the loop runs
  * @input: the command entered by the user
  *

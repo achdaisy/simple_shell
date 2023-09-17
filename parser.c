@@ -2,7 +2,7 @@
 
 /**
  * parser - uses strtok to tokenize a string
- * @input: the input read from getline
+ * @buff: the input read from getline
  *
  * Return: tokenized arguments
  */
@@ -15,8 +15,8 @@ char **parser(char *buff)
 
 	if (buff == NULL)
 		return (NULL);
-	/*if (buff == '\0')
-		return NULL;*/	
+	/*if (buff == '\0')*/
+		/*return NULL;*/
 	if (buff[0] == ' ' && buff[strlen(buff) - 1] == ' ')
 		/*exit (2);*/
 		return (NULL);
@@ -34,7 +34,7 @@ char **parser(char *buff)
 		args[i] = arg1;
 		arg1 = strtok(NULL, delim);
 	}
-	args [i] = NULL;
+	args[i] = NULL;
 	/*free_arr(args);*/
 	/*Remember to free args whenever you call parser. */
 	/*Can lead to memory leaks if called without freeing the previous*/

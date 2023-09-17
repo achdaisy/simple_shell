@@ -2,6 +2,8 @@
 
 /**
  * ctrl_d - implement the control D command
+ * @read: value received from getline.
+ * @input: variable to store the input values
  *
  * Return: Nothing
  */

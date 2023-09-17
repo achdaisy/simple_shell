@@ -2,8 +2,8 @@
 
 /**
  * path_separator - separate the path values
+ * @path: the path value reveived from return_path
  * @arg: accept command
- * 
  *
  * Return: string
  */
@@ -19,7 +19,7 @@ char *path_separator(char *path, char *arg)
 	path_token = strtok(copy_path, delim);
 	file_path = malloc(strlen(arg) + strlen(path_token) + 2);
 
-	while(path_token != NULL)
+	while (path_token != NULL)
 	{
 		strcpy(file_path, path_token);
 		strcat(file_path, "/");
@@ -37,6 +37,12 @@ char *path_separator(char *path, char *arg)
 	free(file_path);
 	return (NULL);
 }
+
+/**
+ * return_path - function to output the path value
+ *
+ * Return: path
+ */
 
 char *return_path(void)
 {

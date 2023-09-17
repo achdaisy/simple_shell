@@ -11,8 +11,8 @@ void _environ(void)
 	/*extern char environ is defined in main.h*/
 	int pos = 0;
 	char **env = environ;
-	
-	for(pos = 0; env[pos] != NULL; pos++)
+
+	for (pos = 0; env[pos] != NULL; pos++)
 	{
 		print_a_str(env[pos]);
 	}
