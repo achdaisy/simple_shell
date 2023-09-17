@@ -27,7 +27,9 @@ void free_arr(char **strings);
 char **parser(char *buff);
 char *npath (void);
 int print_a_char(char a);
-void print_a_str(char *string);
+int print_a_str(char *string);
 void input_err(char *executable, int incrementor, char *input);
+void built_in(char **cmd_args, char *input);
+void ctrl_d(int read, char *input);
 
 #endif
