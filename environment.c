@@ -34,7 +34,7 @@ char *_getenv(char *str)
 	len = _strlen(str);
 	for (pos = 0; env[pos] != NULL; pos++)
 	{
-		value = strncmp(str, env[pos], len);
+		value = _strncmp(str, env[pos], len);
 		if (value == 0 && env[pos][len] == '=')
 		{
 			return (&env[pos][len + 1]);

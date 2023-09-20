@@ -13,7 +13,7 @@ char *npath(void)
 
 	for (j = 0; environ[j] != NULL ; j++)
 	{
-		if (strncmp(environ[j], "PATH", 4) == 0)
+		if (_strncmp(environ[j], "PATH", 4) == 0)
 		{
 			path_copy = _strdup(environ[j]);
 		}
