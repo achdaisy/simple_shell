@@ -31,5 +31,12 @@ int print_a_str(char *string);
 void input_err(char *executable, int incrementor, char *input);
 void built_in(char **cmd_args, char *input);
 void ctrl_d(int read, char *input);
+int _strcmp(const char *str1, const char *str2);
+size_t _strlen(const char *buff);
+char *_getenv(char *str);
+char *_strcat(char *str1, const char *str2);
+char *_strcpy(char *des, const char *initial);
+void *validate_malloc(void *buff);
+char *_strdup(const char *buff);
 
 #endif

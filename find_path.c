@@ -15,7 +15,7 @@ char *npath(void)
 	{
 		if (strncmp(environ[j], "PATH", 4) == 0)
 		{
-			path_copy = strdup(environ[j]);
+			path_copy = _strdup(environ[j]);
 		}
 	}
 
