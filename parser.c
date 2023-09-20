@@ -17,7 +17,7 @@ char **parser(char *buff)
 		return (NULL);
 	/*if (buff == '\0')*/
 		/*return NULL;*/
-	if (buff[0] == ' ' && buff[strlen(buff) - 1] == ' ')
+	if (buff[0] == ' ' && buff[_strlen(buff) - 1] == ' ')
 		/*exit (2);*/
 		return (NULL);
 	args = malloc(sizeof(char *) * n);
