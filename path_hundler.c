@@ -15,16 +15,16 @@ char *path_separator(char *path, char *arg)
 
 	/*path = return_path();*/
 
-	copy_path = strdup(path);
+	copy_path = _strdup(path);
 	path_token = strtok(copy_path, delim);
-	file_path = malloc(strlen(arg) + strlen(path_token) + 2);
+	file_path = malloc(_strlen(arg) + _strlen(path_token) + 2);
 
 	while (path_token != NULL)
 	{
-		strcpy(file_path, path_token);
-		strcat(file_path, "/");
-		strcat(file_path, arg);
-		strcat(file_path, "\0");
+		_strcpy(file_path, path_token);
+		_strcat(file_path, "/");
+		_strcat(file_path, arg);
+		_strcat(file_path, "\0");
 
 		if (access(file_path, X_OK) == 0)
 		{
@@ -48,7 +48,7 @@ char *return_path(void)
 {
 	char *path = NULL;
 
-	path = getenv("PATH");
+	path = _getenv("PATH");
 
 	if (path)
 	{
@@ -57,4 +57,3 @@ char *return_path(void)
 	}
 	return (NULL);
 }
-

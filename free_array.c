@@ -22,3 +22,20 @@ void free_arr(char **strings)
 		/**str_pointer = NULL;*/
 	}
 }
+
+/**
+ * validate_malloc - checks to see if malloc suceeded
+ * @buff: value to be checked
+ *
+ * Return: pointer to buff, else NULL
+ */
+
+void *validate_malloc(void *buff)
+{
+	if (buff == NULL)
+	{
+		perror("malloc failed");
+		return (NULL);
+	}
+	return (buff);
+}
