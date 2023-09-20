@@ -21,7 +21,7 @@ int main(__attribute__((unused)) int argc, char **argv, char **penviron)
 	{
 		incrementor++;
 		if (isatty(STDIN_FILENO))/*interactive mode*/
-			printf("shell$ ");
+			print_a_str("shell$ ");
 		chars_read = getline(&input, &n, stdin);
 		ctrl_d(chars_read, input);
 		cmd_args = parser(input);
