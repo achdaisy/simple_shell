@@ -55,3 +55,30 @@ int _strcmp(const char *str1, const char *str2)
 		return (1);
 	}
 }
+
+/**
+ * _strncmp - custom implementation of strncmp
+ * @str1: the first string
+ * @str2: the second string
+ * @number: the specified number of strings to be compared
+ *
+ * Return: 0
+ */
+
+int _strncmp(const char *str1, const char *str2, size_t number)
+{
+	while (*str1 && (*str1 == *str2) && (number > 0))
+	{
+		str1++;
+		str2++;
+		number--;
+	}
+	if (number == 0)
+	{
+		return (0);
+	}
+	else
+	{
+		return (*(unsigned char *)str1 - *(unsigned char *)str2);
+	}
+}

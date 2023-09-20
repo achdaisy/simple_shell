@@ -38,5 +38,6 @@ char *_strcat(char *str1, const char *str2);
 char *_strcpy(char *des, const char *initial);
 void *validate_malloc(void *buff);
 char *_strdup(const char *buff);
+int _strncmp(const char *str1, const char *str2, size_t number);
 
 #endif
