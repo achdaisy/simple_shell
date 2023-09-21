@@ -10,7 +10,7 @@
 
 void built_in(char **cmd_args, char *input)
 {
-	int stat;
+	/*int stat;*/
 
 	if (_strcmp(cmd_args[0], "exit") == 0)
 	{
